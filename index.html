@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo Videollamada</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-primary bg-primary">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+
+        <div class="container mt-5">
+        <div class="row divcito">
+            <div class="col-md-6">
+                <img src="img/login.png" alt="Imagen de login" style="width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <h1 class="red">Restablecer Contraseña</h1>
+                <form>
+                    <label for="idpass">Contraseña</label>
+                    <input class="form-control"  type="password" id="idpass" placeholder="Ingrese su contraseña">
+
+                    <label for="password2">Repita la contraseña</label>
+                    <input class="form-control" type="password" id="password2" placeholder="Ingrese nuevamente su contraseña">
+
+                    <button class="btn btn-primary mt-2 " type="button" onclick="validar()">Restablecer</button>
+                    <button class="btn btn-secondary mt-2" type="reset">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validar(){
+           let password1 = document.getElementById("idpass").value;
+           let password2 = document.getElementById("password2").value;
+
+           if(password1 == password2){
+               alert("Son iguales");
+               document.getElementById("password2").classList.add("is-valid");
+               document.getElementById("password2").classList.remove("is-invalid");
+           }else{
+                document.getElementById("password2").classList.remove("is-valid");
+                document.getElementById("password2").classList.add("is-invalid");
+           }
+        }
+    </script>
+    </body>
+</html>
